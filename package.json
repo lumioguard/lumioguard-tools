@@ -38,14 +38,14 @@
     "rules:check": "node scripts/build-rule-catalog.mjs --check"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@types/node": "^22.10.2",
-    "turbo": "^2.10.11",
-    "typescript": "^5.7.2"
+    "@biomejs/biome": "2.5.12",
+    "@types/node": "^26.4.1",
+    "turbo": "^2.10.12",
+    "typescript": "^7.0.2"
   },
   "pnpm": {
     "overrides": {
-      "@biomejs/biome": "1.9.4"
+      "@biomejs/biome": "2.5.12"
     }
   }
 }
