@@ -16,8 +16,8 @@
     "@lumioguard/api-core": "workspace:*",
     "@lumioguard/shared": "workspace:*",
     "@lumioguard/slopmeter-core": "workspace:*",
-    "hono": "~4.12.27",
-    "zod": "^3.23.8"
+    "hono": "~4.13.7",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260815.1",

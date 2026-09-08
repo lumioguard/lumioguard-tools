@@ -14,7 +14,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "zod": "^3.23.8"
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "typescript": "^5.7.2",
