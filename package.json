@@ -1,7 +1,7 @@
 {
   "name": "lumioguard-tools",
   "private": true,
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "A home for URL-only tools that read a public website and report something true about it. Each tool is a detection engine, a Worker and a client; they share the contracts, tokens and surface in packages/.",
   "keywords": [
     "website-audit",

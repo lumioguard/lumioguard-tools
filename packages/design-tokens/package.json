@@ -1,6 +1,6 @@
 {
   "name": "@lumioguard/design-tokens",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "private": true,
   "type": "module",
   "description": "Colour, type, spacing, radii and elevation, emitted per theme as a Tailwind plugin.",

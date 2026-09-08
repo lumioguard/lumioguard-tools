@@ -1,6 +1,6 @@
 {
   "name": "@lumioguard/citecheck-core",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "private": true,
   "type": "module",
   "description": "Citecheck engine: crawler access, structured claims, document and answerability analysis, crawl and scoring. Isomorphic, no I/O.",
