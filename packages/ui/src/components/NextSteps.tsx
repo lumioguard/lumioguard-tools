@@ -16,17 +16,20 @@ const LABEL_BRAND = 'LumioGuard';
 /** Renders NOTHING when the LumioGuard integration is not configured. */
 export function NextSteps({
   siteKey,
+  from = null,
   offer,
   context,
 }: {
   readonly siteKey: string | null | readonly (string | null)[];
+  /** The tool this report belongs to, when it is one tool's. The app leads with it. */
+  readonly from?: string | null;
   /** What the hand-off is worth, in this tool's own words. */
   readonly offer: string;
   /** What the page around it knows, sent with the click. Never an address. */
   readonly context?: EventProperties;
 }): JSX.Element | null {
   const analytics = useAnalytics();
-  const href = fullAuditUrl(siteKey);
+  const href = fullAuditUrl(siteKey, from);
   if (href === null) return null;
 
   return (
