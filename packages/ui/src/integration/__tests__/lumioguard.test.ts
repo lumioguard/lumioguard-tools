@@ -65,6 +65,15 @@ describe.skipIf(AUDIT_ORIGIN === null)('fullAuditUrl, with an app configured', (
     expect(url.searchParams.getAll('sitekey')).toEqual(['AAAAAA_BBBBBB_CCCCCC']);
   });
 
+  // The app leads with the tool the visitor is leaving, so one tool's report names
+  // itself. A console that ran several names none and the app shows them side by side.
+  it('names the tool the report belongs to, and only then', () => {
+    const named = new URL(fullAuditUrl('K7M2XQ', 'slopmeter') ?? '');
+    expect(named.searchParams.get('from')).toBe('slopmeter');
+    expect(named.searchParams.get('sitekey')).toBe('K7M2XQ');
+    expect(new URL(fullAuditUrl('K7M2XQ') ?? '').searchParams.has('from')).toBe(false);
+  });
+
   // The caller orders them, so the reading that set the verdict leads.
   it('puts the caller’s worst reading first', () => {
     const url = new URL(fullAuditUrl(['WORST1', 'BBBBBB']) ?? '');

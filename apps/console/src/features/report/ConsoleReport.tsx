@@ -131,6 +131,8 @@ export function ConsoleReport({
             <NextSteps
               offer={HANDOFF_OFFER}
               siteKey={siteKeys}
+              // One tool's report names itself; a run of several is a full audit.
+              from={tools.length === 1 ? (tools[0]?.id ?? null) : null}
               context={{ ...readingContext, cta_location: 'report_verdict' }}
             />
           )

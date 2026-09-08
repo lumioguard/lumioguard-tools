@@ -43,13 +43,21 @@ const KEY_JOINER = '_';
  * Never a sign-in path: that route has moved and every visitor landed on a 404. Keys
  * come from the readings, never derived from the address, or everyone who scanned a
  * host reaches one stranger's verdict. ORDER IS MEANING: the verdict's key leads.
+ *
+ * `from` names the tool the visitor is leaving, when the report is one tool's: the
+ * app leads with that reading and files the rest as other findings. A console that
+ * ran several tools names none, and the app shows them side by side.
  */
-export function fullAuditUrl(siteKeys: string | null | readonly (string | null)[]): string | null {
+export function fullAuditUrl(
+  siteKeys: string | null | readonly (string | null)[],
+  from: string | null = null,
+): string | null {
   if (AUDIT_ORIGIN === null) return null;
   const url = new URL('/', AUDIT_ORIGIN);
   const keys = (Array.isArray(siteKeys) ? siteKeys : [siteKeys]).filter(
     (key): key is string => typeof key === 'string' && key !== '',
   );
   if (keys.length > 0) url.searchParams.set('sitekey', keys.join(KEY_JOINER));
+  if (from) url.searchParams.set('from', from);
   return url.toString();
 }
